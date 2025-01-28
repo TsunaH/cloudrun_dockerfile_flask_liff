@@ -1,0 +1,64 @@
+steps:
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'build', 
+    '-t', 
+    'gcr.io/$PROJECT_ID/#SERVICE_NAME:$BRANCH_NAME', 
+    '--cache-from',
+    'gcr.io/$PROJECT_ID/$SERVICE_NAME:$BRANCH_NAME', 
+    '-f',
+    'Dockerfile',
+    '--build-arg',
+    'PORT=8080',
+    '.'
+    ]
+- name: 'gcr.io/cloud-builders/docker'
+  args: [
+    'push',
+    'gcr.io/$PROJECT_ID/$SERVICE_NAME:$BRANCH_NAME' 
+    ]
+- name: 'gcr.io/cloud-builders/gcloud'
+  args: [
+    'run', 
+    'deploy', 
+    '--project',
+    '$PROJECT_ID',
+    $SERVICE_NAME, 
+    '--image', 
+    'gcr.io/$PROJECT_ID/$SERVICE_NAME:$BRANCH_NAME', 
+    '--region', 
+    'asia-northeast1', 
+    '--platform', 
+    'managed', 
+    '--max-instances',
+    '100',
+    '--min-instances',
+    '0',
+    '--memory',
+    '256Mi',
+    '--timeout',
+    '1m',
+    '--cpu',
+    '1',
+    '--concurrency',
+    '40',
+    '--port',
+    '8080',
+    '--allow-unauthenticated',
+    '--ingress',
+    'internal-and-cloud-load-balancing',
+    '--vpc-connector',
+    '$_VPC_CONNECTOR',
+    '--vpc-egress',
+    'all-traffic',
+    '--update-env-vars',
+    'PROJECT_ID=$PROJECT_ID',
+    '--update-secrets',
+    'JWT_SECRET=JWT_SECRET:latest',
+    '--service-account',
+    'line-connect@$PROJECT_ID.iam.gserviceaccount.com',
+    ]
+images:
+  - asia-northeast1-docker.pkg.dev/$PROJECT_ID/gcr-artifacts/line-connect:$BRANCH_NAME
+options:
+  logging: CLOUD_LOGGING_ONLY
