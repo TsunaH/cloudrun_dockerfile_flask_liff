@@ -3,9 +3,9 @@ steps:
   args: [
     'build', 
     '-t', 
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$_BRANCH_NAME', 
+    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest', 
     '--cache-from',
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$_BRANCH_NAME', 
+    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest', 
     '-f',
     'Dockerfile',
     '--build-arg',
