@@ -3,9 +3,9 @@ steps:
   args: [
     'build', 
     '-t', 
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest', 
+    'asia-northeast1-docker.pkg.dev/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:latest', 
     '--cache-from',
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest', 
+    'asia-northeast1-docker.pkg.dev/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:latest', 
     '-f',
     'Dockerfile',
     '--build-arg',
@@ -15,7 +15,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'push',
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest' 
+    'asia-northeast1-docker.pkg.dev/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:latest', 
     ]
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [
@@ -25,7 +25,7 @@ steps:
     '$_PROJECT_ID',
     '$_SERVICE_NAME', 
     '--image', 
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest', 
+    'asia-northeast1-docker.pkg.dev/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:latest', 
     '--region', 
     'asia-northeast1', 
     '--platform', 
@@ -59,6 +59,6 @@ steps:
 #    'line-connect@$PROJECT_ID.iam.gserviceaccount.com',
     ]
 images:
-- 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest'
+- 'asia-northeast1-docker.pkg.dev/$_PROJECT_ID/cloud-run-source-deploy/$_SERVICE_NAME:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
