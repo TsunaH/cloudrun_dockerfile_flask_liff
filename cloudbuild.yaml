@@ -15,7 +15,7 @@ steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'push',
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$_BRANCH_NAME' 
+    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest' 
     ]
 - name: 'gcr.io/cloud-builders/gcloud'
   args: [
@@ -25,7 +25,7 @@ steps:
     '$_PROJECT_ID',
     '$_SERVICE_NAME', 
     '--image', 
-    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$_BRANCH_NAME', 
+    'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest', 
     '--region', 
     'asia-northeast1', 
     '--platform', 
@@ -59,6 +59,6 @@ steps:
 #    'line-connect@$PROJECT_ID.iam.gserviceaccount.com',
     ]
 images:
-- 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:$_BRANCH_NAME'
+- 'gcr.io/$_PROJECT_ID/$_SERVICE_NAME:latest'
 options:
   logging: CLOUD_LOGGING_ONLY
