@@ -1,3 +1,8 @@
+import liff from '@line/liff';
+import LIFFInspectorPlugin from '@line/liff-inspector';
+
+liff.use(new LIFFInspectorPlugin());
+
 function main() {
   liff
     .init({
