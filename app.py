@@ -29,9 +29,9 @@ def vue():
     return render_template('liff-test/test.html')
 
 
-# @app.route("/liff-test/<path>")
-# def path(path):
-#     return render_template(f"liff-test/{path}")
+@app.route("/liff-test/<path>")
+def path(path):
+    return render_template(f"liff-test/{path}")
 
 
 if __name__ == '__main__':
