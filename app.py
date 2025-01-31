@@ -23,9 +23,11 @@ def hello():
         Service=service,
         Revision=revision)
 
-@app.route('/vue')
-def vue():
-    return render_template('liff-test/test.html')
+@app.route('/vue/<path>')
+def vue(path):
+    if path is None:
+        path = 'test.html'
+    return render_template(f"liff-test/{path}")
 
 if __name__ == '__main__':
     server_port = os.environ.get('PORT', '8080')
