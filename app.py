@@ -25,11 +25,11 @@ def hello():
 
 
 @app.route('/vue')
-def vue(path):
+def vue():
     return render_template('liff-test/test.html')
 
 
-@app.route('/<path')
+@app.route('/<path>')
 def path(path):
     return render_template(path)
 
