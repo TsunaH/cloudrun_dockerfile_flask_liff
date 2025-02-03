@@ -25,8 +25,10 @@ liff
     ]);
   });
 */
+/*
 liff
   .init({
     //liffId: liffid, // Use own liffId
     liffId: "2006831755-QEdgjOA8",
   });
+*/
