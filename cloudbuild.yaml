@@ -1,4 +1,12 @@
 steps:
+- name: 'node'
+  entrypoint: 'npm'
+  args: [
+    'run',
+    'build',
+    '--prefix',
+    'templates/liff-test'
+  ]
 - name: 'gcr.io/cloud-builders/docker'
   args: [
     'build', 
