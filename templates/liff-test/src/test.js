@@ -3,6 +3,9 @@ import App from './App.vue';
 
 import liff from "@line/liff";
 
+createApp(App).mount('#app');
+
+
 // ローカルテスト用
 //let liffid = "2006831755-QxVm4KvW";
 // LINE動作確認要
@@ -25,6 +28,5 @@ liff
 liff
   .init({
     //liffId: liffid, // Use own liffId
-    liffId: "2006831755-QEdgjOA8"
+    liffId: "2006831755-QEdgjOA8",
   });
-createApp(App).mount('#app');
