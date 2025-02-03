@@ -12,6 +12,7 @@ liff
   .init({
     liffId: liffid, // Use own liffId
   })
+/*
   .then(() => {
     liff.sendMessages([
     {
@@ -19,6 +20,6 @@ liff
       text: "Hello World"
     }
     ]);
-  });
+  })*/;
 
 createApp(App).mount('#app');
