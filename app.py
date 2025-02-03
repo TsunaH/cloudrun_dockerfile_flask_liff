@@ -6,7 +6,7 @@ import os
 from flask import Flask, render_template
 
 # pylint: disable=C0103
-app = Flask(__name__, template_folder='templates/liff-test/dist', static_folder='templates/liff-test/dist', )
+app = Flask(__name__, template_folder='templates/liff-test/dist', static_folder='templates/liff-test/dist', static_url_path='')
 
 
 @app.route('/')
