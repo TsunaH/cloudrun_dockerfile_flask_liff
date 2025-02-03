@@ -2,7 +2,10 @@ steps:
 - name: 'node'
   entrypoint: 'npm'
   args: [
-    'install'
+    'install',
+    '--prefix',
+    'templates/liff-test',
+    'templates/liff-test'
     ]
 - name: 'node'
   entrypoint: 'npm'
