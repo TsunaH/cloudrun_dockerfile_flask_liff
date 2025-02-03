@@ -12,7 +12,6 @@ liff.init({
   liffId: liffid, // Use own liffId
 });
 
-/*
 liff.ready.then(() => {
   if (liffid == "2006831755-QEdgjOA8") {
     liff.sendMessages([
@@ -23,8 +22,6 @@ liff.ready.then(() => {
     ]);
   }
   console.log('henna')
-  createApp(App).mount('#app');
 });
-*/
 
-// createApp(App).mount('#app');
+createApp(App).mount('#app');
