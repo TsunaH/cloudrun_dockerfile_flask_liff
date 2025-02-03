@@ -10,9 +10,9 @@ let liffid = "2006831755-QEdgjOA8";
 
 liff
   .init({
-    liffId: liffid, // Use own liffId
+    //liffId: liffid, // Use own liffId
+    liffId: "2006831755-QEdgjOA8"
   })
-/*
   .then(() => {
     liff.sendMessages([
     {
@@ -20,6 +20,6 @@ liff
       text: "Hello World"
     }
     ]);
-  })*/;
+  });
 
 createApp(App).mount('#app');
