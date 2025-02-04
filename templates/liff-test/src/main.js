@@ -1,10 +1,10 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 
-import liff from "@line/liff";
+//import liff from "@line/liff";
 
 //createApp(App).mount('#app');
-
+/*
 liff
   .init({
     //liffId: liffid, // Use own liffId
@@ -14,5 +14,5 @@ liff
   }).catch((err) => {
     alert(err);
   });
-
+*/
   createApp(App).mount('#app');
