@@ -10,7 +10,7 @@ liff
     //liffId: liffid, // Use own liffId
     liffId: "2006831755-QEdgjOA8",
   }).then(() => {
-    alert(success);
+    alert('success');
   }).catch((err) => {
     alert(err);
   });
