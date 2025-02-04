@@ -29,6 +29,20 @@ export default {
       })
       .then(() => {
         this.message = "LIFF init succeeded.";
+
+        liff
+          .sendMessages([
+            {
+              type: "text",
+              text: "Hello, World!",
+            },
+          ])
+          .then(() => {
+            console.log("message sent");
+          })
+          .catch((err) => {
+            console.log("error", err);
+          });
       })
       .catch((e) => {
         this.message = "LIFF init failed.";
