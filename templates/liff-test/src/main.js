@@ -3,7 +3,7 @@ import App from './App.vue';
 
 import liff from "@line/liff";
 
-createApp(App).mount('#app');
+//createApp(App).mount('#app');
 
 liff
   .init({
@@ -14,3 +14,5 @@ liff
   }).catch((err) => {
     alert(err);
   });
+
+  createApp(App).mount('#app');
