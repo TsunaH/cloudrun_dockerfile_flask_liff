@@ -30,6 +30,8 @@ export default {
       .then(() => {
         this.message = "LIFF init succeeded.";
 
+        alert(liff.getContext());
+
         liff
           .sendMessages([
             {
