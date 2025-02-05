@@ -8,11 +8,21 @@
     <a href="https://developers.line.biz/ja/docs/liff/" target="_blank" rel="noreferrer">
       LIFF Documentation
     </a>
+
+    <section>
+      <TextArea
+        name="test1"
+        value="tttttttt"/>
+      <TextArea
+        name="test2"
+        value="nnn"/>
+    </section>
   </div>
 </template>
 
 <script>
 import liff from "@line/liff";
+import TextArea from "./components/TextArea.vue";
 
 export default {
   data() {
