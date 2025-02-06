@@ -3,6 +3,20 @@
   import CustomTextArea from "./components/CustomTextArea.vue";
   import { ref, onMounted } from "vue";
 
+  import winston;
+  import { loggingWinston } from '@google-cloud/logging-winston';
+
+  const logger = winston.createLogger({
+    level: 'info',
+    transports: [
+      new winston.transports.Console(),
+      // Add Cloud Logging
+      loggingWinston,
+    ],
+  });
+  logger.info('info test');
+  logger.error('error test');
+
   /*  
   export default {
     data() {

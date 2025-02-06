@@ -1,5 +1,13 @@
 steps:
 - name: 'node'
+  endpoint: 'npm'
+  args: [
+      'install',
+      '--save',
+      '@google-cloud/logging-winston',
+      'winston'
+    ]
+- name: 'node'
   entrypoint: 'npm'
   args: [
     'install',
