@@ -43,8 +43,8 @@
     }
   };
 */
-const message = ref("1");
-const error = ref("2");
+const message = ref("");
+const error = ref("");
 
   onMounted(
     function() {
@@ -54,7 +54,7 @@ const error = ref("2");
         liffId: '2006831755-QEdgjOA8'
       })
       .then(() => {
-        message = "LIFF init succeeded.";
+        message.value = "LIFF init succeeded.";
 
         liff
           .sendMessages([
