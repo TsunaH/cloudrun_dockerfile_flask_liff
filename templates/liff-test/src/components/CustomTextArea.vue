@@ -7,8 +7,6 @@ const props = defineProps({
 </script>
 
 <template>
-  <section>
-      <div>■{{ props.name }}</div>
-      <input type="text" v-model="props.value">
-  </section>
+  <p>{{props.name}}</p>
+  <input type="text" v-bind:value="value">
 </template>
