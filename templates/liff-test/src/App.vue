@@ -43,9 +43,9 @@
     }
   };
 */
-  let message = "";
-  let error = "";
-  
+const message = ref("1");
+const error = ref("2");
+
   onMounted(
     function() {
       liff
@@ -55,8 +55,6 @@
       })
       .then(() => {
         message = "LIFF init succeeded.";
-
-        alert(liff.getContext());
 
         liff
           .sendMessages([
@@ -71,15 +69,14 @@
           .catch((err) => {
             alert("error", err);
           });
-      })
+
+        })
       .catch((e) => {
-        message = "LIFF init failed.";
-        error = `${e}`;
+        message.value = "LIFF init failed.";
+        error.value = `${e}`;
       });
-      console.log("message:"+message);
-      console.log("error:"+error);
-      const message_disp = ref(message);
-      const error_disp = ref(error);  
+      console.log('message:' + message);
+      console.log("error:"+error);  
     }
   )
 
@@ -88,9 +85,9 @@
 <template>
   <div>
     <h1>create-liff-app</h1>
-    <p v-if="message_disp">{{ message_disp }}</p>
-    <p v-if="error_disp">
-      <code>{{ error_disp }}</code>
+    <p v-if="message">{{ message }}</p>
+    <p v-if="error">
+      <code>{{ error }}</code>
     </p>
     <a href="https://developers.line.biz/ja/docs/liff/" target="_blank" rel="noreferrer">
       LIFF Documentation
