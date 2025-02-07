@@ -1,21 +1,12 @@
 <script setup>
   import liff from "@line/liff";
   import CustomTextArea from "./components/CustomTextArea.vue";
+
+  import Test1 from "./views/Test1.vue";
+  import Test2 from "./views/Test2.vue";
+
   import { ref, onMounted } from "vue";
-
-  import { winston } from 'winston';
-  import { loggingWinston } from '@google-cloud/logging-winston';
-
-  const logger = winston.createLogger({
-    level: 'info',
-    transports: [
-      new winston.transports.Console(),
-      // Add Cloud Logging
-      loggingWinston,
-    ],
-  });
-  logger.info('info test');
-  logger.error('error test');
+  import { RouterView, RouterLink } from "vue-router";
 
   /*  
   export default {
@@ -112,6 +103,8 @@ const error = ref("");
       name="test1"
       value="tttttttt" />
   </section>
+  <RouterLink to="/test1">リンクテスト</RouterLink>
+  <RouterView />
 </template>
 
 <style>

@@ -2,14 +2,6 @@ steps:
 - name: 'node'
   entrypoint: 'npm'
   args: [
-      'install',
-      '--save',
-      '@google-cloud/logging-winston',
-      'winston'
-    ]
-- name: 'node'
-  entrypoint: 'npm'
-  args: [
     'install',
     '--prefix',
     'templates/liff-test',
