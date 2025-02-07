@@ -1,10 +1,6 @@
 <script setup>
   import liff from "@line/liff";
   import CustomTextArea from "./components/CustomTextArea.vue";
-
-  import Test1 from "./views/Test1.vue";
-  import Test2 from "./views/Test2.vue";
-
   import { ref, onMounted } from "vue";
   import { RouterView, RouterLink } from "vue-router";
 
@@ -103,8 +99,15 @@ const error = ref("");
       name="test1"
       value="tttttttt" />
   </section>
-  <RouterLink to="/test1">リンクテスト</RouterLink>
-  <RouterView />
+  <section>
+    <RouterLink to="/test1">リンクテスト</RouterLink>
+  </section>
+  <section>
+    <RouterLink to="/test2">リンクテスト2</RouterLink>
+  </section>
+  <section> 
+    <RouterView />
+  </section>
 </template>
 
 <style>
