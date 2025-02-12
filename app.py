@@ -9,6 +9,7 @@ from flask import Flask, render_template
 app = Flask(__name__, template_folder='templates/liff-test/dist', static_folder='templates/liff-test/dist', static_url_path='')
 
 
+@app.route('/', defaults={'path': ''})
 @app.route('/<path>')
 def hello(path):
     """Return a friendly HTTP greeting."""
@@ -18,7 +19,7 @@ def hello(path):
     service = os.environ.get('K_SERVICE', 'Unknown service')
     revision = os.environ.get('K_REVISION', 'Unknown revision')
 
-    return render_template(f"/{path}",
+    return render_template("index.html",
         message=message,
         Service=service,
         Revision=revision)
