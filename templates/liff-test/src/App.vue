@@ -90,21 +90,7 @@ const error = ref("");
     <p v-if="error">
       <code>{{ error }}</code>
     </p>
-    <a href="https://developers.line.biz/ja/docs/liff/" target="_blank" rel="noreferrer">
-      LIFF Documentation
-    </a>
   </div>
-  <section>
-    <CustomTextArea
-      name="test1"
-      value="tttttttt" />
-  </section>
-  <section>
-    <RouterLink to="/test1">リンクテスト</RouterLink>
-  </section>
-  <section>
-    <RouterLink to="/test2">リンクテスト2</RouterLink>
-  </section>
   <section> 
     <RouterView />
   </section>
