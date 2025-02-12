@@ -1,5 +1,5 @@
 <script setup>
-  import {useMemberStore} from "../stores/memberStore";
+  import {useMemberStore} from "../stores/memberStore.js";
 
   const memberStore = useMemberStore();
 
