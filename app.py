@@ -9,7 +9,7 @@ from flask import Flask, render_template
 app = Flask(__name__, template_folder='templates/liff-test/dist', static_folder='templates/liff-test/dist', static_url_path='')
 
 
-@app.route('/')
+@app.route('/<path>')
 def hello():
     """Return a friendly HTTP greeting."""
     message = "It's running!"
