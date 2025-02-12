@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder='templates/liff-test/dist', static_folder=
 
 
 @app.route('/<path>')
-def hello():
+def hello(path):
     """Return a friendly HTTP greeting."""
     message = "It's running!"
 
@@ -18,7 +18,7 @@ def hello():
     service = os.environ.get('K_SERVICE', 'Unknown service')
     revision = os.environ.get('K_REVISION', 'Unknown revision')
 
-    return render_template('index.html',
+    return render_template(f"/{path}",
         message=message,
         Service=service,
         Revision=revision)
