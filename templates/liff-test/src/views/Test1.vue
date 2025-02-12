@@ -1,7 +1,7 @@
 <script setup>
   import {reactive} from "vue";
   import {useRouter} from "vue-router";
-  import {useMemberStore} from "../stores/memberStore"
+  import {useMemberStore} from "../stores/memberStore";
 
   const memberStore = useMemberStore();
   const router = useRouter();
