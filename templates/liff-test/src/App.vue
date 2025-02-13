@@ -101,9 +101,6 @@ const error = ref("");
   <section> 
     <RouterView />
   </section>
-  <section> 
-    <RouterView />
-  </section>
 </template>
 
 <style>
