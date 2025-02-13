@@ -53,7 +53,8 @@ const error = ref("");
       liff
       .init({
         //liffId: import.meta.env.VITE_LIFF_ID
-        liffId: '2006831755-QEdgjOA8'
+        //liffId: '2006831755-QEdgjOA8'
+        liffId: '2006899352-ndBbWrOK'
       })
       .then(() => {
         message.value = "LIFF init succeeded.";
