@@ -92,6 +92,15 @@ const error = ref("");
       <code>{{ error }}</code>
     </p>
   </div>
+  <section>
+    <RouterLink to="/test1">リンクテスト</RouterLink>
+  </section>
+  <section>
+    <RouterLink to="/test2">リンクテスト2</RouterLink>
+  </section>
+  <section> 
+    <RouterView />
+  </section>
   <section> 
     <RouterView />
   </section>
