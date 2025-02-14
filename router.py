@@ -1,6 +1,7 @@
 import os
 
 from flask import Blueprint
+from flask import Flask, render_template
 
 router = Blueprint('router', __name__)
 
