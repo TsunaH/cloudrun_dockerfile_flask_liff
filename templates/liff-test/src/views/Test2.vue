@@ -1,6 +1,6 @@
 <script setup>
   import {useMemberStore} from "../stores/memberStore.js";
-  import {axios} from "axios";
+  import axios from "axios";
 
   const memberStore = useMemberStore();
 
