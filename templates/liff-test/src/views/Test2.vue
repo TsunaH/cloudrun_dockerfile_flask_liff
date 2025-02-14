@@ -7,7 +7,7 @@
   const onUpdate = function() {
     console.log("登録ボタン押下");
 
-    const response = await axios.get('/api/apitest');
+    const response = axios.get('/api/apitest');
     alert(response);
   }
 </script>
