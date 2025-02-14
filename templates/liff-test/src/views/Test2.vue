@@ -1,10 +1,14 @@
 <script setup>
   import {useMemberStore} from "../stores/memberStore.js";
+  import {axios} from "axios";
 
   const memberStore = useMemberStore();
 
   const onUpdate = function() {
     console.log("登録ボタン押下");
+
+    const response = await axios.get('/api/apitest');
+    alert(response);
   }
 </script>
   
