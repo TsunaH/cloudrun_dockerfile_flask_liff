@@ -7,7 +7,7 @@ from flask import Flask, render_template
 from flask_restful import Api, Resource
 
 # API用Router
-from api.router import router
+from router import router
 
 
 # pylint: disable=C0103
