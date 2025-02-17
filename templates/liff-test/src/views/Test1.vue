@@ -7,7 +7,7 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
-  var memberStore = axios.get('/api/apitest');
+  var memberStore = await axios.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest');
 console.log(memberStore);
 
 alert(memberStore.name);
