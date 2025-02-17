@@ -3,11 +3,18 @@
   import {useRouter} from "vue-router";
   import {useMemberStore} from "../stores/memberStore.js";
 
-  const memberStore = useMemberStore();
+  // BackEndの処理呼び出し用
+  import axios from "axios";
+
+  // 顧客情報取得用のfunction呼び出し
+  var memberStore = axios.get('/api/apitest');
+console.log(memberStore);
+
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
     console.log(memberStore);
+    useMemberStore.update(memberStore)
     router.push({name: "Test2"});
   }
 </script>

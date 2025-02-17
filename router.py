@@ -3,6 +3,9 @@ import os
 from flask import Blueprint
 from flask import Flask, render_template
 
+# 顧客情報用の処理
+from api import member
+
 router = Blueprint('router', __name__)
 
 
@@ -24,5 +27,5 @@ def main(path):
 
 @router.route('/api/apitest', methods=['GET'])
 def apitest():
-    text = "apiからの返却値"
-    return text
+    result = member.getMemberInfo()
+    return result
