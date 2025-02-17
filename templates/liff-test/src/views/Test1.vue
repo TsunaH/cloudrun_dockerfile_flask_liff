@@ -10,6 +10,9 @@
   var memberStore = axios.get('/api/apitest');
 console.log(memberStore);
 
+alert(memberStore.name);
+alert(memberStore);
+
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
