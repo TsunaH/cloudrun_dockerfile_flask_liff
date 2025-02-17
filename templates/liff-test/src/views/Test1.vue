@@ -9,18 +9,21 @@
   // 顧客情報取得用のfunction呼び出し
   //const response = await axios.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest');
   const response = await axios.get('/api/apitest');
-  const memberStore = response.data;
+  const member = response.data;
 
-  console.log(memberStore);
+  console.log("test henna");
+  console.log(member);
 
-alert(memberStore.name);
-alert(memberStore);
+  alert(member.name);
+  alert(member);
 
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
-    console.log(memberStore);
-    useMemberStore.update(memberStore)
+    console.log(this.member);
+
+    const memberStore = useMemberStore();
+    useMemberStore.update(member)
     router.push({name: "Test2"});
   }
 </script>
@@ -33,25 +36,25 @@ alert(memberStore);
         <label for="inputName">名前&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputName" v-bind:value="memberStore.name">
+        <input type="text" id="inputName" v-bind:value="member.name">
       </dd>
       <dt>
         <label for="inputEmail">メールアドレス&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputEmail" v-bind:value="memberStore.email">
+        <input type="text" id="inputEmail" v-bind:value="member.email">
       </dd>
       <dt>
         <label for="inputPoints">ポイント&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputPoints" v-bind:value="memberStore.points">
+        <input type="text" id="inputPoints" v-bind:value="member.points">
       </dd>
       <dt>
         <label for="inputNote">備考&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputNote" v-bind:value="memberStore.note">
+        <input type="text" id="inputNote" v-bind:value="member.note">
       </dd>
     </dl>
     <button type="submit">確認</button>
