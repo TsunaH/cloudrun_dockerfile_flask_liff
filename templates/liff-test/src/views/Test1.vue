@@ -33,25 +33,25 @@ alert(memberStore);
         <label for="inputName">名前&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputName" v-model="memberStore.name">
+        <input type="text" id="inputName" v-bind:value="memberStore.name">
       </dd>
       <dt>
         <label for="inputEmail">メールアドレス&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputEmail" v-model="memberStore.email">
+        <input type="text" id="inputEmail" v-bind:value="memberStore.email">
       </dd>
       <dt>
         <label for="inputPoints">ポイント&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputPoints" v-model="memberStore.points">
+        <input type="text" id="inputPoints" v-bind:value="memberStore.points">
       </dd>
       <dt>
         <label for="inputNote">備考&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputNote" v-model="memberStore.note">
+        <input type="text" id="inputNote" v-bind:value="memberStore.note">
       </dd>
     </dl>
     <button type="submit">確認</button>
