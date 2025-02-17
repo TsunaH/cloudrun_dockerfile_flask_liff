@@ -1,3 +1,5 @@
+from flask import jsonify
+
 
 def getMemberInfo():
     data = {
@@ -6,4 +8,4 @@ def getMemberInfo():
       'points': 23232,
       'note': 'apiNote',
     }
-    return data, 200
+    return jsonify(data), 200
