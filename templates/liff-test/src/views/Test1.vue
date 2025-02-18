@@ -16,10 +16,10 @@
   };
 
 
-  const callapi = async function() {
+  const callapi = function() {
     let response;
     try {
-      response = await axios
+      response = axios
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
       alert ("in Function");
