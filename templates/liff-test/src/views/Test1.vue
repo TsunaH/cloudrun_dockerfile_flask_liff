@@ -17,19 +17,20 @@
 
 
   const callapi = async function() {
-    let memberInfo;
+    let response;
     try {
-      const response = await axios
+      response = await axios
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
+      alert ("in Function");
       alert (JSON.stringify(response));
-      memberInfo = response.data.data;
     } catch (error) {
       alert("call api error"+error);
     }
-    return memberInfo;
+    return response;
   }
-  member = callapi();
+  const res = callapi();
+  member = res.data;
 
   /*
   //  const member = response.data;
