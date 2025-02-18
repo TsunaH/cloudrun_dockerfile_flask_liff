@@ -21,7 +21,8 @@
       .then(
         response => {
           alert('call api success?2');
-          member = response.data;
+          console.log(response.data);
+          this.member = response.data;
         }
       )
       .catch(
