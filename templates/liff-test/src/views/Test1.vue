@@ -7,12 +7,14 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
+  /*
   let member = ref({
     'name': "1",
     'email': '22',
     'points': 0,
     'note': '333',
   });
+  */
   const callapi = async function() {
     const response = 
     await axios
@@ -21,10 +23,12 @@
       .then(
         function(response) {
           alert('call api success?2');
+/*
           console.log(response.data);
           member.name = response.data.name;
           alert('call api name ok');
-          member = response.data;
+*/
+          return response.data;
         }
       )
       .catch(
@@ -33,7 +37,7 @@
         }
       );
   }
-  callapi();
+  const member = callapi();
 
   console.log("test henna");
   console.log(member);
