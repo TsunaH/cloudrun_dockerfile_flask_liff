@@ -29,7 +29,7 @@
   const member = callapi();
 */
   //  const member = response.data;
-  const response = axios.get('/api/apitest');
+  const response = await axios.get('/api/apitest');
   const memberInfo = response.data;
 
 //  member.name = memberInfo.name;
