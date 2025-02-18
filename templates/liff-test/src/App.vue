@@ -21,23 +21,6 @@
         })
         .then(() => {
           this.message = "LIFF init succeeded.";
-  
-          alert(liff.getContext());
-  
-          liff
-            .sendMessages([
-              {
-                type: "text",
-                text: "Hello, World!",
-              },
-            ])
-            .then(() => {
-              alert("message sent");
-            })
-            .catch((err) => {
-              alert("error", err);
-            });
-        })
         .catch((e) => {
           this.message = "LIFF init failed.";
           this.error = `${e}`;

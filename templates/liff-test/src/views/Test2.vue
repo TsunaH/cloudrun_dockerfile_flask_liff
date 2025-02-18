@@ -1,4 +1,5 @@
 <script setup>
+  import liff from "@line/liff";
   import {useMemberStore} from "../stores/memberStore.js";
   import axios from "axios";
 
@@ -9,6 +10,20 @@
 
     const response = axios.get('/api/apitest');
     alert(response);
+
+    liff
+      .sendMessages([
+      {
+        type: "text",
+        text: "Hello, World!",
+      },
+      ])
+      .then(() => {
+        alert("message sent");
+      })
+      .catch((err) => {
+        alert("error", err);
+      });
   }
 </script>
   

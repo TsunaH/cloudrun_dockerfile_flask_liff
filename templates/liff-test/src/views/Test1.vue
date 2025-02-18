@@ -28,8 +28,6 @@
           alert(JSON.stringify(result));
           alert(JSON.stringify(member.value));
         })
-      alert ("in Function");
-      alert (JSON.stringify(response));
     } catch (error) {
       alert("call api error"+error);
     }
