@@ -22,7 +22,7 @@
         function(response) {
           alert('call api success?2');
           console.log(response.data);
-          this.member = data;
+          this.member = response.data;
         }
       )
       .catch(
