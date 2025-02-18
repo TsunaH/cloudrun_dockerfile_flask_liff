@@ -7,25 +7,26 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
-  /*
+/*
   let member = ref({
     'name': "1",
     'email': '22',
     'points': 0,
     'note': '333',
   });
-  */
+*/
   const callapi = async function() {
     try {
       const response = await axios
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
+      return response.data;
     } catch (error) {
       alert("call api error"+error);
     }
   }
-  callapi();
-  const member = response.data;
+  const member = callapi();
+//  const member = response.data;
 
   console.log("test henna");
   console.log(member);
