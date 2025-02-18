@@ -19,8 +19,10 @@
     await axios
       .get('/api/apitest')
       .then(
+        alert('call api success?');
         response => {
-          member = respons.data;
+          alert('call api success?2');
+          member = response.data;
         }
       )
       .catch(
