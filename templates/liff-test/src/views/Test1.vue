@@ -7,12 +7,12 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
-  let member = {
+  let member = ref({
     'name': "1",
     'email': '22',
     'points': 0,
     'note': '333',
-  };
+  });
   const callapi = async function() {
     const response = 
     await axios
