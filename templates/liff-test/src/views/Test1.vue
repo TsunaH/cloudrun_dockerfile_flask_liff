@@ -24,15 +24,9 @@
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
         .then(function(result) {
           member.value = result.data;
-          /*
-          member.name ="test";
-          member.email = "ttt@ddd";
-          member.points = 23;
-          member.note = "memo desu";
-          */
           alert("in then");
           alert(JSON.stringify(result));
-          alert(JSON.stringify(member));
+          alert(JSON.stringify(member.value));
         })
       alert ("in Function");
       alert (JSON.stringify(response));
@@ -41,29 +35,11 @@
     }
     return response;
   }
-  const res = callapi();
-//  member = res.data;
+  callapi();
 
-  /*
-  //  const member = response.data;
-  const response = await axios.get('/api/apitest');
-  const memberInfo = response.data;
-  */
-//  member.name = memberInfo.name;
+  alert("test henna");
+  alert(JSON.stringify(member.value));
 
-  console.log("test henna");
-//  console.log(JSON.stringify(response));
-  console.log(JSON.stringify(member));
-
-//  alert(member.name);
-//  alert (JSON.stringify(response));
-alert("test henna");
-alert(JSON.stringify(member.value));
-/*
-  if(memberInfo){
-    member = memberInfo;
-  }
-*/
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
@@ -71,10 +47,10 @@ alert(JSON.stringify(member.value));
 
     const memberStore = useMemberStore();
     memberStore.update(
-      member.name,
-      member.email,
-      member.points,
-      member.note
+      member.value.name,
+      member.value.email,
+      member.value.points,
+      member.value.note
     );
     router.push({name: "Test2"});
   }
