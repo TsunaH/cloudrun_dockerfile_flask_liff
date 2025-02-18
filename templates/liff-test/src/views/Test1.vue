@@ -16,29 +16,16 @@
   });
   */
   const callapi = async function() {
-    const response = 
-    await axios
-      .get('/api/apitest')
-      //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
-      .then(
-        function(response) {
-          alert('call api success?2');
-/*
-          console.log(response.data);
-          member.name = response.data.name;
-          alert('call api name ok');
-*/
-          alert("response:"+response.data);
-          return response.data;
-        }
-      )
-      .catch(
-        error => {
-          alert("call api error"+error);
-        }
-      );
+    try {
+      const response = await axios
+        .get('/api/apitest')
+        //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
+    } catch (error) {
+      alert("call api error"+error);
+    }
   }
-  const member = callapi();
+  callapi();
+  const member = response.data;
 
   console.log("test henna");
   console.log(member);
