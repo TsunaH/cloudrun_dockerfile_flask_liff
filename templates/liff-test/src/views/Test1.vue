@@ -35,8 +35,8 @@
   console.log("test henna");
   console.log(member);
 
-  //alert(member.name);
-  //alert(member);
+  alert(member.name);
+  alert(member);
 
   const router = useRouter();
   const onUpdate = function() {
