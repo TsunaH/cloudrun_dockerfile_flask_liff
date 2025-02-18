@@ -27,7 +27,7 @@
     } catch (error) {
       alert("call api error"+error);
     }
-    return memberInfo;
+    return memberInfo.data;
   }
   const memberInfo = callapi();
 
