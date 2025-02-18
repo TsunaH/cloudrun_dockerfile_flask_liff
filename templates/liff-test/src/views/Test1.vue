@@ -24,7 +24,9 @@
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
         .then(function(result) {
           member = result.data;
-          alert(member);
+          alert("in then");
+          alert(JSON.stringify(result));
+          alert(JSON.stringify(member));
         })
       alert ("in Function");
       alert (JSON.stringify(response));
