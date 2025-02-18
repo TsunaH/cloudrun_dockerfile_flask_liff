@@ -23,7 +23,7 @@
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
       alert (JSON.stringify(response));
-      this.memberInfo = response.data;
+      memberInfo = response.data;
     } catch (error) {
       alert("call api error"+error);
     }
