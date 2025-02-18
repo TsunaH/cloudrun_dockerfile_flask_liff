@@ -8,12 +8,12 @@
 
   // 顧客情報取得用のfunction呼び出し
 
-  let member = {
+  let member = ref({
     'name': "1",
     'email': '22',
     'points': 0,
     'note': '333',
-  };
+  });
 
 
   const callapi = async function() {
@@ -23,10 +23,10 @@
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
         .then(function(result) {
-          member = result.data;
+          const memberApi = result.data;
           alert("in then");
           alert(JSON.stringify(result));
-          alert(JSON.stringify(member));
+          alert(JSON.stringify(memberApi));
         })
       alert ("in Function");
       alert (JSON.stringify(response));
@@ -82,25 +82,25 @@ alert(JSON.stringify(member));
         <label for="inputName">名前&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputName" v-model="member.name">
+        <input type="text" id="inputName" v-model="memberApi.name">
       </dd>
       <dt>
         <label for="inputEmail">メールアドレス&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputEmail" v-model="member.email">
+        <input type="text" id="inputEmail" v-model="memberApi.email">
       </dd>
       <dt>
         <label for="inputPoints">ポイント&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputPoints" v-model="member.points">
+        <input type="text" id="inputPoints" v-model="memberApi.points">
       </dd>
       <dt>
         <label for="inputNote">備考&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputNote" v-model="member.note">
+        <input type="text" id="inputNote" v-model="memberApi.note">
       </dd>
     </dl>
     <button type="submit">確認</button>
