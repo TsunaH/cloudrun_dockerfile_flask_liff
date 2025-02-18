@@ -11,11 +11,17 @@
     const response = axios.get('/api/apitest');
     alert(response);
 
+    const message =
+      "名前：" + memberStore.name + "\n"
+    + "Eメール：" + memberStore.email + "\n"
+    + "保有ポイント数：" + memberStore.points + "\n"
+    + "備考：" + memberStore.note + "\n";
+
     liff
       .sendMessages([
       {
         type: "text",
-        text: "Hello, World!",
+        text: message,
       },
       ])
       .then(() => {
