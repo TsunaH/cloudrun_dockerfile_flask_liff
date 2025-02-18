@@ -23,13 +23,13 @@
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
       alert (JSON.stringify(response));
-      memberInfo = response.data;
+      memberInfo = response.data.data;
     } catch (error) {
       alert("call api error"+error);
     }
-    return memberInfo.data;
+    return memberInfo;
   }
-  const memberInfo = callapi();
+  const memberInfo = await callapi();
 
   /*
   //  const member = response.data;
@@ -44,7 +44,8 @@
 
 //  alert(member.name);
 //  alert (JSON.stringify(response));
-  alert(JSON.stringify(memberInfo));
+alert("test henna");
+alert(JSON.stringify(memberInfo));
 
   if(memberInfo){
     member = memberInfo;
