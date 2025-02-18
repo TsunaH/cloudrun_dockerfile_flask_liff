@@ -28,6 +28,7 @@
           member.name = response.data.name;
           alert('call api name ok');
 */
+          alert("response:"+response.data);
           return response.data;
         }
       )
