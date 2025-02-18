@@ -15,6 +15,7 @@
     'note': '333',
   });
 */
+/*
   const callapi = async function() {
     try {
       const response = await axios
@@ -26,7 +27,10 @@
     }
   }
   const member = callapi();
-//  const member = response.data;
+*/
+  //  const member = response.data;
+  const response = axios.get('/api/apitest');
+  const member = response.data;
 
   console.log("test henna");
   console.log(member);
