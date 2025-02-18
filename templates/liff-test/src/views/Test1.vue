@@ -7,15 +7,19 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
+  let member = null;
   //const response = await axios.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest');
-  const response = await axios.get('/api/apitest');
-  const member = response.data;
+  const callapi = async function() {
+    const response = await axios.get('/api/apitest');
+    member = response.data;
+  }
+  callapi();
 
   console.log("test henna");
   console.log(member);
 
-  alert(member.name);
-  alert(member);
+  //alert(member.name);
+  //alert(member);
 
   const router = useRouter();
   const onUpdate = function() {
