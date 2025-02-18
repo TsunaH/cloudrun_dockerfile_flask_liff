@@ -19,10 +19,10 @@
       .get('/api/apitest')
       //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
       .then(
-        response => {
+        function() {
           alert('call api success?2');
-          console.log(response.data);
-          this.member = response.data;
+          console.log(data);
+          this.member = data;
         }
       )
       .catch(
