@@ -7,14 +7,14 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
-/*
+
   let member = ref({
     'name': "1",
     'email': '22',
     'points': 0,
     'note': '333',
   });
-*/
+
 /*
   const callapi = async function() {
     try {
@@ -30,13 +30,17 @@
 */
   //  const member = response.data;
   const response = axios.get('/api/apitest');
-  const member = response.data;
+  const memberInfo = response.data;
+
+//  member.name = memberInfo.name;
 
   console.log("test henna");
-  console.log(member);
+  console.log(JSON.stringify(response));
+  console.log(JSON.stringify(member));
 
 //  alert(member.name);
-  alert(member);
+  alert (JSON.stringify(response));
+  alert(JSON.stringify(member));
 
   const router = useRouter();
   const onUpdate = function() {
