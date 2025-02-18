@@ -16,7 +16,7 @@
   };
 
 
-  let memberInfo = {};
+  let memberInfo;
   const callapi = async function() {
     try {
       const response = await axios
