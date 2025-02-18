@@ -29,7 +29,7 @@
     }
     return memberInfo;
   }
-  const memberInfo = await callapi();
+  member = callapi();
 
   /*
   //  const member = response.data;
@@ -40,17 +40,17 @@
 
   console.log("test henna");
 //  console.log(JSON.stringify(response));
-  console.log(JSON.stringify(memberInfo));
+  console.log(JSON.stringify(member));
 
 //  alert(member.name);
 //  alert (JSON.stringify(response));
 alert("test henna");
-alert(JSON.stringify(memberInfo));
-
+alert(JSON.stringify(member));
+/*
   if(memberInfo){
     member = memberInfo;
   }
-
+*/
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
