@@ -4,32 +4,8 @@
   import { ref, onMounted } from "vue";
   import { RouterView, RouterLink } from "vue-router";
 
-  /*  
-  export default {
-    data() {
-      return {
-        message: "",
-        error: ""
-      };
-    },
-    mounted() {
-      liff
-        .init({
-          //liffId: import.meta.env.VITE_LIFF_ID
-          //liffId: '2006831755-QEdgjOA8'
-          liffId: '2006899352-ndBbWrOK'
-        })
-        .then(() => {
-          this.message = "LIFF init succeeded.";
-        .catch((e) => {
-          this.message = "LIFF init failed.";
-          this.error = `${e}`;
-        });
-    }
-  };
-*/
-const message = ref("");
-const error = ref("");
+  const message = ref("");
+  const error = ref("");
 
   onMounted(
     function() {
@@ -41,20 +17,6 @@ const error = ref("");
       })
       .then(() => {
         message.value = "LIFF init succeeded.";
-
-        liff
-          .sendMessages([
-            {
-              type: "text",
-              text: "Hello, World!",
-            },
-          ])
-          .then(() => {
-            alert("message sent");
-          })
-          .catch((err) => {
-            alert("error", err);
-          });
 
         })
       .catch((e) => {
