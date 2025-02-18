@@ -23,10 +23,16 @@
         .get('/api/apitest')
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
         .then(function(result) {
-          const memberApi = result.data;
+          member.value = result.data;
+          /*
+          member.name ="test";
+          member.email = "ttt@ddd";
+          member.points = 23;
+          member.note = "memo desu";
+          */
           alert("in then");
           alert(JSON.stringify(result));
-          alert(JSON.stringify(memberApi));
+          alert(JSON.stringify(member));
         })
       alert ("in Function");
       alert (JSON.stringify(response));
@@ -52,7 +58,7 @@
 //  alert(member.name);
 //  alert (JSON.stringify(response));
 alert("test henna");
-alert(JSON.stringify(member));
+alert(JSON.stringify(member.value));
 /*
   if(memberInfo){
     member = memberInfo;
@@ -61,7 +67,7 @@ alert(JSON.stringify(member));
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
-    console.log(member);
+    console.log(member.value);
 
     const memberStore = useMemberStore();
     memberStore.update(
@@ -82,25 +88,25 @@ alert(JSON.stringify(member));
         <label for="inputName">名前&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputName" v-model="memberApi.name">
+        <input type="text" id="inputName" v-model="member.name">
       </dd>
       <dt>
         <label for="inputEmail">メールアドレス&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputEmail" v-model="memberApi.email">
+        <input type="text" id="inputEmail" v-model="member.email">
       </dd>
       <dt>
         <label for="inputPoints">ポイント&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputPoints" v-model="memberApi.points">
+        <input type="text" id="inputPoints" v-model="member.points">
       </dd>
       <dt>
         <label for="inputNote">備考&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputNote" v-model="memberApi.note">
+        <input type="text" id="inputNote" v-model="member.note">
       </dd>
     </dl>
     <button type="submit">確認</button>
