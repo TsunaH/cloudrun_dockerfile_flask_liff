@@ -1,5 +1,5 @@
 <script setup>
-  import {reactive} from "vue";
+  import {reactive, ref, useTemplateRef} from "vue";
   import {useRouter} from "vue-router";
   import {useMemberStore} from "../stores/memberStore.js";
 
@@ -7,11 +7,27 @@
   import axios from "axios";
 
   // 顧客情報取得用のfunction呼び出し
-  let member = null;
+  let member = {
+    'name': "1",
+    'email': '22',
+    'points': 0,
+    'note': '333',
+  };
   //const response = await axios.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest');
   const callapi = async function() {
-    const response = await axios.get('/api/apitest');
-    member = response.data;
+    const response = 
+    await axios
+      .get('/api/apitest')
+      .then(
+        response => {
+          member = respons.data;
+        }
+      )
+      .catch(
+        error => {
+          alert("call api error");
+        }
+      );
   }
   callapi();
 
@@ -24,10 +40,15 @@
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
-    console.log(this.member);
+    console.log(member);
 
     const memberStore = useMemberStore();
-    useMemberStore.update(member)
+    memberStore.update(
+      member.name,
+      member.email,
+      member.points,
+      member.note
+    );
     router.push({name: "Test2"});
   }
 </script>
@@ -40,25 +61,25 @@
         <label for="inputName">名前&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputName" v-bind:value="member.name">
+        <input type="text" id="inputName" v-model="member.name">
       </dd>
       <dt>
         <label for="inputEmail">メールアドレス&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputEmail" v-bind:value="member.email">
+        <input type="text" id="inputEmail" v-model="member.email">
       </dd>
       <dt>
         <label for="inputPoints">ポイント&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputPoints" v-bind:value="member.points">
+        <input type="text" id="inputPoints" v-model="member.points">
       </dd>
       <dt>
         <label for="inputNote">備考&nbsp;</label>
       </dt>
       <dd>
-        <input type="text" id="inputNote" v-bind:value="member.note">
+        <input type="text" id="inputNote" v-model="member.note">
       </dd>
     </dl>
     <button type="submit">確認</button>

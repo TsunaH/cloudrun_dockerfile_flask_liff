@@ -1,26 +1,31 @@
 import {defineStore} from 'pinia';
 
 export const useMemberStore = defineStore(
-    'member',
-    {
-    state: () => {
-      return {
-        name: "",
-        email: "",
-        points: 0,
-        note: "", 
-      };
-    },
+  'member',
+  {
+    state: () => ({
+      name: "",
+      email: "",
+      points: 0,
+      note: "", 
+    }),
     getters: {
       getMember: (state) => {
         return state.member;
       }
     },
     actions: {
-      update(state, member) {
-        state.member = member;
-
+      update(
+        name,
+        email,
+        points,
+        note
+      ) {
+        this.name = name;
+        this.email = email;
+        this.points = points;
+        this.note = note;
       }
-    }
+    },
   }
 )
