@@ -13,13 +13,12 @@
     'points': 0,
     'note': '333',
   };
-  //const response = await axios.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest');
   const callapi = async function() {
     const response = 
     await axios
       .get('/api/apitest')
+      //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
       .then(
-        alert('call api success?');
         response => {
           alert('call api success?2');
           member = response.data;
