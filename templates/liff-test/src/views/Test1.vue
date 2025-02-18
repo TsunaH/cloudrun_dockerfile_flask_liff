@@ -42,6 +42,10 @@
   alert (JSON.stringify(response));
   alert(JSON.stringify(memberInfo));
 
+  if(memberInfo){
+    member = memberInfo;
+  }
+
   const router = useRouter();
   const onUpdate = function() {
     console.log("update exec");
