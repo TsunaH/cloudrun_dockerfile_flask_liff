@@ -36,11 +36,11 @@
 
   console.log("test henna");
   console.log(JSON.stringify(response));
-  console.log(JSON.stringify(member));
+  console.log(JSON.stringify(memberInfo));
 
 //  alert(member.name);
   alert (JSON.stringify(response));
-  alert(JSON.stringify(member));
+  alert(JSON.stringify(memberInfo));
 
   const router = useRouter();
   const onUpdate = function() {
