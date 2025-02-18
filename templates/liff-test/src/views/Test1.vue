@@ -22,12 +22,12 @@
         function(response) {
           alert('call api success?2');
           console.log(response.data);
-          this.member = response.data;
+          this.member = data;
         }
       )
       .catch(
         error => {
-          alert("call api error");
+          alert("call api error"+error);
         }
       );
   }
