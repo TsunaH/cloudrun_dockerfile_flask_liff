@@ -3,4 +3,4 @@ requests==2.31.0
 debugpy # Required for debugging.
 flask_restful
 google-cloud-logging
-google-cloud-bigquery
+google-cloud-firestore

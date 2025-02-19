@@ -2,6 +2,7 @@ from flask import jsonify
 
 import logging
 import google.cloud.logging
+from google.cloud import firestore
 
 # Logger設定
 logging.basicConfig(
@@ -24,4 +25,8 @@ def getMemberInfo():
       'note': 'apiNote',
     }
     logger.info(f"{data}")
+
+    db = firestore.Client()
+    data = db.collection("tsuna_test").document("tsuna_test").get()
+    logger.info(f"firestore:{data}")
     return jsonify(data), 200
