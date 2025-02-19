@@ -27,6 +27,6 @@ def getMemberInfo():
     logger.info(f"{data}")
 
     db = firestore.Client()
-    data = db.collection("tsuna_test").document("tsuna_test").get()
+    data = db.collection("tsuna_test").document("tsuna_test").get().to_dict()
     logger.info(f"firestore:{data}")
     return jsonify(data), 200
