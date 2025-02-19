@@ -18,14 +18,6 @@ logging_client.setup_logging()
 
 def getMemberInfo():
     logger.info("getMemberInfo")
-    data = {
-      'name': 'apiName',
-      'email': 'apiMail',
-      'points': 23232,
-      'note': 'apiNote',
-    }
-    logger.info(f"{data}")
-
     db = firestore.Client()
     data = db.collection("tsuna_test").document("tsuna_test").get().to_dict()
     logger.info(f"firestore:{data}")
