@@ -30,7 +30,7 @@ def main(path):
         Revision=revision)
 
 
-@router.route('/api/apitest', methods=['GET'])
+@router.route('/api/apitest', methods=['POST'])
 def apitest():
     global collection
     result = member.getMemberInfo(collection)
