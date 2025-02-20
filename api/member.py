@@ -20,8 +20,9 @@ def getMemberInfo(collection):
     logger.info(f"getMemberInfo url:{request.url}, params:{request.get_json()}")
     request_json = request.get_json()
     lineId = request_json.get('lineId')
-
+    logger.info(f"lineId:{lineId}")
     db = firestore.Client()
     data = db.collection(collection).document(lineId).get().to_dict()
+    logger.info(f"get data:{data}")
     logger.info(f"firestore:{data}")
     return jsonify(data), 200
