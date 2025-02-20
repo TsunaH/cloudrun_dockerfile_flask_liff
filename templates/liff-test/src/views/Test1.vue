@@ -49,6 +49,20 @@
               lineStore = useLineStore()
               lineStore.setId(userId) 
               alert('userId:'+profile.userId);
+
+              response = axios
+              .post(
+                '/api/apitest',
+                {
+                    lineId: lineId
+                })
+              //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
+              .then(function(result) {
+                member.value = result.data;
+                alert("in then");
+              alert(JSON.stringify(result));
+                alert(JSON.stringify(member.value));
+              })
             }
           )
           .catch(
@@ -56,20 +70,6 @@
             alert("getProfile Error"+error);
           })
       })
-
-      response = await axios
-        .post(
-          '/api/apitest',
-          {
-              lineId: lineId
-          })
-        //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
-        .then(function(result) {
-          member.value = result.data;
-          alert("in then");
-        alert(JSON.stringify(result));
-          alert(JSON.stringify(member.value));
-        })
     } catch (error) {
       alert("call api error"+error);
     }
