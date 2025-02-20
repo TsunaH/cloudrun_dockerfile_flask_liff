@@ -41,7 +41,7 @@ def main(path):
     # コレクション取得
     global collection
     query_param = parse_qs(urlparse(request.url).query)
-    collection = query_param.get("cd")
+    collection = query_param.get("cd")[0]
     logger.info("/_/_/_/_/ main() /_/_/_/_")
     logger.info(f"collection:{collection}")
 
