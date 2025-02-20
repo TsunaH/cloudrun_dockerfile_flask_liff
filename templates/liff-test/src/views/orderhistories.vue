@@ -39,11 +39,10 @@
 <template>
   <form v-on:submit.prevent="onUpdate">
     <dl>
-      <template
+      <div
         v-for="orderhistory in orderhistories"
         v-bind:key="KEY"
-        style="border: 1px solid #333333;"
-        > 
+        style="border: 1px solid #333333;"> 
         <dt>■注文番号&nbsp;</dt>
         <dd>&nbsp;&nbsp;{{orderhistory.order_id}}</dd>
         <dt>■注文日&nbsp;</dt>
@@ -58,7 +57,7 @@
         <dd>&nbsp;&nbsp;{{orderhistory.order_amount}}</dd>
         <dt>■ご注文の状態&nbsp;</dt>
         <dd>&nbsp;&nbsp;{{orderhistory.shipment_detail_status}}</dd>
-      </template>
+      </div>
     </dl>
   </form>
 </template>
