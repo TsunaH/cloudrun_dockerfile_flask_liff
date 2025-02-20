@@ -29,7 +29,7 @@
   const callapi = async function() {
     let response;
     try {
-      //const lineStore = useLineStore();
+      const lineStore = useLineStore();
       //const lineId = lineStore.getId;
       let lineId;
 
