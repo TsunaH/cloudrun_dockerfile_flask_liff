@@ -46,13 +46,13 @@
         > 
         <dt>■注文番号&nbsp;</dt>
         <dd>&nbsp;&nbsp;{{orderhistory.order_id}}</dd>
-        <dt>注文日&nbsp;</dt>
-        <dd>{{orderhistory.order_regist_day}}</dd>
+        <dt>■注文日&nbsp;</dt>
+        <dd>&nbsp;&nbsp;{{orderhistory.order_regist_day}}</dd>
         <dt>■ご注文商品（数量）&nbsp;</dt>
           <div
             v-for="product_info in orderhistory.product_infos"
             v-bind:key="KEY">
-            {{ product_info.product_name }}({{ product_info.order_qty }})
+            &nbsp;&nbsp;{{ product_info.product_name }}({{ product_info.order_qty }})
           </div>
         <dt>■ご注文金額&nbsp;</dt>
         <dd>&nbsp;&nbsp;{{orderhistory.order_amount}}</dd>
