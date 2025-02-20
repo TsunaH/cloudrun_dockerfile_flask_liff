@@ -32,16 +32,31 @@
       //const lineStore = useLineStore();
       //const lineId = lineStore.getId;
       let lineId;
-      liff.getProfile()
-      .then(
-        function(profile) {
-          // LINE ID格納
-          lineId = profile.userId;
-          lineStore = useLineStore()
-          lineStore.setId(userId) 
-          alert('userId:'+profile.userId);
-        }
-      )
+
+      liff
+      .init({
+        //liffId: import.meta.env.VITE_LIFF_ID
+        //liffId: '2006831755-QEdgjOA8'
+        liffId: '2006899352-ndBbWrOK'
+      })
+      .then(() => {
+        liff
+          .getProfile()
+          .then(
+            function(profile) {
+              // LINE ID格納
+              lineId = profile.userId;
+              lineStore = useLineStore()
+              lineStore.setId(userId) 
+              alert('userId:'+profile.userId);
+            }
+          )
+          .catch(
+            function(error) {
+            alert("getProfile Error"+error);
+          })
+      })
+
       response = await axios
         .post(
           '/api/apitest',
