@@ -19,18 +19,6 @@
       })
       .then(() => {
         message.value = "LIFF init succeeded.";
-
-        liff.getProfile()
-          .then(
-            function(profile) {
-              // LINE ID格納
-              userId = profile.userId;
-              lineStore = useLineStore()
-              lineStore.setId(userId) 
-              alert('userId:'+profile.userId);
-            }
-          )
-
       })
       .catch((e) => {
         message.value = "LIFF init failed.";

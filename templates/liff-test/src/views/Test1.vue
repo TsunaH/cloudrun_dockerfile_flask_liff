@@ -26,12 +26,22 @@
     'note': '333',
   });
 
-
   const callapi = async function() {
     let response;
     try {
-      const lineStore = useLineStore();
-      const lineId = lineStore.getId;
+      //const lineStore = useLineStore();
+      //const lineId = lineStore.getId;
+      let lineId;
+      liff.getProfile()
+      .then(
+        function(profile) {
+          // LINE ID格納
+          userId = profile.userId;
+          lineStore = useLineStore()
+          lineStore.setId(userId) 
+          alert('userId:'+profile.userId);
+        }
+      )
       response = await axios
         .post(
           '/api/apitest',
@@ -42,7 +52,7 @@
         .then(function(result) {
           member.value = result.data;
           alert("in then");
-          alert(JSON.stringify(result));
+        alert(JSON.stringify(result));
           alert(JSON.stringify(member.value));
         })
     } catch (error) {
@@ -50,6 +60,7 @@
     }
     return response;
   }
+
   callapi();
 
   alert("test henna");
