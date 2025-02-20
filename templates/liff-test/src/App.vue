@@ -18,7 +18,14 @@
       .then(() => {
         message.value = "LIFF init succeeded.";
 
-        })
+        liff.getProfile()
+          .then(
+            function(profile) {
+              alert('userId:'+profile.userId);
+            }
+          )
+
+      })
       .catch((e) => {
         message.value = "LIFF init failed.";
         error.value = `${e}`;
