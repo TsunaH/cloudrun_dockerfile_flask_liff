@@ -6,6 +6,22 @@ from flask import Flask, render_template, request
 # 顧客情報用の処理
 from api import member
 
+import logging
+import google.cloud.logging
+from google.cloud import firestore
+
+# Logger設定
+logging.basicConfig(
+        format="[%(asctime)s][%(levelname)s] %(message)s",
+        level=logging.DEBUG
+    )
+logger = logging.getLogger()
+
+# Cloud Logging ハンドラを logger に接続
+logging_client = google.cloud.logging.Client()
+logging_client.setup_logging()
+
+
 router = Blueprint('router', __name__)
 
 collection = None
@@ -23,6 +39,8 @@ def main(path):
     # コレクション取得
     global collection
     collection = request.args.get("cd")
+    logger.info("/_/_/_/_/ main() /_/_/_/_")
+    logger.info(f"collection:{collection}")
 
     return render_template("index.html",
         message=message,
