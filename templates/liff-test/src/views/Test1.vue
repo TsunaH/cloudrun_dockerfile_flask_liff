@@ -30,8 +30,8 @@
   const callapi = async function() {
     let response;
     try {
-      lineStore = useLineStore()
-      lineId = lineStore.getId()
+      const lineStore = useLineStore();
+      const lineId = lineStore.getId;
       response = await axios
         .post(
           '/api/apitest',
