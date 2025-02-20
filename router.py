@@ -5,8 +5,8 @@ from urllib.parse import urlparse, parse_qs
 from flask import Blueprint
 from flask import Flask, render_template, request
 
-# 顧客情報用の処理
-from api import member
+# API
+from api import memberApi, orderhistoriesApi
 
 import logging
 import google.cloud.logging
@@ -54,12 +54,12 @@ def main(path):
 @router.route('/api/apitest', methods=['POST'])
 def apitest():
     # global collection
-    result = member.getMemberInfo(collection)
+    result = memberApi.getMemberInfo(collection)
     return result
 
 
-@router.route('/api/orderhistories', methods=['POST'])
-def apitest():
+@router.route('/api/getorderhistories', methods=['POST'])
+def getorderhistories():
     # global collection
-    result = member.getMemberInfo(collection)
+    result = orderhistoriesApi.getOrderhistories(collection)
     return result
