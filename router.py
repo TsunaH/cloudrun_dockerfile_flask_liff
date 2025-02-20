@@ -56,3 +56,10 @@ def apitest():
     # global collection
     result = member.getMemberInfo(collection)
     return result
+
+
+@router.route('/api/orderhistories', methods=['POST'])
+def apitest():
+    # global collection
+    result = member.getMemberInfo(collection)
+    return result
