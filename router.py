@@ -1,13 +1,14 @@
 import os
 
 from flask import Blueprint
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 # 顧客情報用の処理
 from api import member
 
 router = Blueprint('router', __name__)
 
+collection = None
 
 @router.route('/', defaults={'path': ''})
 @router.route('/<path>')
@@ -19,6 +20,10 @@ def main(path):
     service = os.environ.get('K_SERVICE', 'Unknown service')
     revision = os.environ.get('K_REVISION', 'Unknown revision')
 
+    # コレクション取得
+    global collection
+    collection = request.args.get("cd")
+
     return render_template("index.html",
         message=message,
         Service=service,
@@ -27,5 +32,6 @@ def main(path):
 
 @router.route('/api/apitest', methods=['GET'])
 def apitest():
-    result = member.getMemberInfo()
+    global collection
+    result = member.getMemberInfo(collection)
     return result

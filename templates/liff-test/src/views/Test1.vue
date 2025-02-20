@@ -2,9 +2,20 @@
   import {reactive, ref, useTemplateRef} from "vue";
   import {useRouter} from "vue-router";
   import {useMemberStore} from "../stores/memberStore.js";
+  import {useLineStore} from "../stores/lineStore.js";
+  import liff from "@line/liff";
+
 
   // BackEndの処理呼び出し用
   import axios from "axios";
+
+  userId = 
+  liff.getProfile()
+  .then(
+    function(profile) {
+      userId = profile.userId; 
+    }
+  )
 
   // 顧客情報取得用のfunction呼び出し
 
@@ -19,8 +30,16 @@
   const callapi = async function() {
     let response;
     try {
+      lineStore = useLineStore()
+      lineId = lineStore.getId()
       response = await axios
-        .get('/api/apitest')
+        .post(
+          '/api/apitest',
+          {
+            {
+              lineid: lineId
+            }
+          })
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
         .then(function(result) {
           member.value = result.data;

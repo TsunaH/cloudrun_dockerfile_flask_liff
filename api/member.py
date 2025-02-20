@@ -1,4 +1,4 @@
-from flask import jsonify
+from flask import jsonify, request
 
 import logging
 import google.cloud.logging
@@ -16,9 +16,12 @@ logging_client = google.cloud.logging.Client()
 logging_client.setup_logging()
 
 
-def getMemberInfo():
-    logger.info("getMemberInfo")
+def getMemberInfo(collection):
+    logger.info(f"getMemberInfo url:{request.url}, params:{request.get_json()}")
+    request_json = request.get_json()
+    lineId = request_json.get('lineId')
+
     db = firestore.Client()
-    data = db.collection("tsuna_test").document("tsuna_test").get().to_dict()
+    data = db.collection(collection).document(lineId).get().to_dict()
     logger.info(f"firestore:{data}")
     return jsonify(data), 200

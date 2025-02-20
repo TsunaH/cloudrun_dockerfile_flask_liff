@@ -3,9 +3,11 @@
   import CustomTextArea from "./components/CustomTextArea.vue";
   import { ref, onMounted } from "vue";
   import { RouterView, RouterLink } from "vue-router";
+  import {useLineStore} from "../stores/lineStore.js";
 
   const message = ref("");
   const error = ref("");
+  const userId = ref("");
 
   onMounted(
     function() {
@@ -21,6 +23,10 @@
         liff.getProfile()
           .then(
             function(profile) {
+              // LINE ID格納
+              userId = profile.userId;
+              lineStore = useLineStore()
+              lineStore.setId(userId) 
               alert('userId:'+profile.userId);
             }
           )
@@ -46,10 +52,10 @@
     </p>
   </div>
   <section>
-    <RouterLink to="/test1">リンクテスト</RouterLink>
+    <RouterLink v-bind:to="{name: 'Test1'}">リンクテスト</RouterLink>
   </section>
   <section>
-    <RouterLink to="/test2">リンクテスト2</RouterLink>
+    <RouterLink v-bind:to="{name: 'Test2'}">リンクテスト2</RouterLink>
   </section>
   <section> 
     <RouterView />
