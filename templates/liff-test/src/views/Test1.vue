@@ -36,7 +36,7 @@
         .post(
           '/api/apitest',
           {
-              lineid: lineId
+              lineId: lineId
           })
         //.get('https://cloudrun-dockerfile-flask-liff-973730455124.asia-northeast1.run.app/api/apitest')
         .then(function(result) {
