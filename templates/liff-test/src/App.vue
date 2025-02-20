@@ -3,7 +3,7 @@
   import CustomTextArea from "./components/CustomTextArea.vue";
   import { ref, onMounted } from "vue";
   import { RouterView, RouterLink } from "vue-router";
-  import {useLineStore} from "../stores/lineStore.js";
+  import {useLineStore} from "./stores/lineStore.js";
 
   const message = ref("");
   const error = ref("");
