@@ -17,7 +17,7 @@ logging_client.setup_logging()
 
 
 def getMemberInfo(collection):
-    logger.info(f"getMemberInfo url:{request.url}, params:{request.get_json()}")
+    logger.info(f"getMemberInfo url:{request.url}, params:{request.get_json()}, collection:{collection}")
     request_json = request.get_json()
     lineId = request_json.get('lineId')
     logger.info(f"lineId:{lineId}")
