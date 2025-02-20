@@ -9,7 +9,7 @@
   // BackEndの処理呼び出し用
   import axios from "axios";
 
-  userId = 
+  let userId;
   liff.getProfile()
   .then(
     function(profile) {
