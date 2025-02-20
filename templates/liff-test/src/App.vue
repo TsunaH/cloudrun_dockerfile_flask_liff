@@ -11,6 +11,7 @@
 
   onMounted(
     function() {
+/*
       liff
       .init({
         //liffId: import.meta.env.VITE_LIFF_ID
@@ -26,6 +27,7 @@
       });
       console.log('message:' + message);
       console.log("error:"+error);  
+*/
     }
   )
 
