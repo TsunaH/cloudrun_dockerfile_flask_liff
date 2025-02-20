@@ -32,6 +32,6 @@ def main(path):
 
 @router.route('/api/apitest', methods=['POST'])
 def apitest():
-    global collection
+    # global collection
     result = member.getMemberInfo(collection)
     return result
