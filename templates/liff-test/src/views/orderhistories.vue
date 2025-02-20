@@ -42,7 +42,7 @@
       <template
         v-for="orderhistory in orderhistories"
         v-bind:key="KEY"
-        style="border: 1px;"
+        style="border: 1px solid #333333;"
         > 
         <dt>■注文番号&nbsp;</dt>
         <dd>&nbsp;&nbsp;{{orderhistory.order_id}}</dd>
