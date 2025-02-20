@@ -29,7 +29,7 @@
   const callapi = async function() {
     let response;
     try {
-      const lineStore = useLineStore();
+      //const lineStore = useLineStore();
       //const lineId = lineStore.getId;
       let lineId;
 
@@ -46,7 +46,7 @@
             function(profile) {
               // LINE ID格納
               lineId = profile.userId;
-              lineStore = useLineStore()
+              const lineStore = useLineStore()
               lineStore.setId(userId) 
               alert('userId:'+profile.userId);
 
