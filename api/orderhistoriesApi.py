@@ -22,7 +22,9 @@ def getOrderhistories(collection):
     lineId = request_json.get('lineId')
     logger.info(f"lineId:{lineId}")
     db = firestore.Client()
-    documentId = f"orderhistories_{lineId}"
+    documentId = f"orderhistories_ {lineId}"
+    logger.info(f"collection:{collection}")
+    logger.info(f"documentID:{documentId}")
     data = db.collection(collection).document(documentId).get().to_dict()
     logger.info(f"get data:{data}")
     logger.info(f"firestore:{data}")
