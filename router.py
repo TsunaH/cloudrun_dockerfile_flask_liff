@@ -1,5 +1,7 @@
 import os
 
+from urllib.parse import urlparse, parse_qs
+
 from flask import Blueprint
 from flask import Flask, render_template, request
 
@@ -38,7 +40,8 @@ def main(path):
 
     # コレクション取得
     global collection
-    collection = request.args.get("cd")
+    query_param = parse_qs(urlparse(request.url).query)
+    collection = query_param.get("cd")
     logger.info("/_/_/_/_/ main() /_/_/_/_")
     logger.info(f"collection:{collection}")
 
