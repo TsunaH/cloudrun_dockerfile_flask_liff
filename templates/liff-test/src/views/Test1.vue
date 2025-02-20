@@ -36,7 +36,7 @@
       .then(
         function(profile) {
           // LINE ID格納
-          userId = profile.userId;
+          lineId = profile.userId;
           lineStore = useLineStore()
           lineStore.setId(userId) 
           alert('userId:'+profile.userId);
