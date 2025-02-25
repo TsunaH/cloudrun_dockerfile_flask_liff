@@ -43,20 +43,21 @@
         v-for="orderhistory in orderhistories"
         v-bind:key="KEY"
         style="border: 1px solid #333333;"> 
-        <dt>■注文番号&nbsp;</dt>
-        <dd>&nbsp;&nbsp;{{orderhistory.order_id}}</dd>
-        <dt>■注文日&nbsp;</dt>
-        <dd>&nbsp;&nbsp;{{orderhistory.order_regist_day}}</dd>
-        <dt>■ご注文商品（数量）&nbsp;</dt>
+        <dt v-if="orderhistory.control_items.order_id==constvalue['DISP_ONLY']">■注文番号&nbsp;</dt>
+        <dd v-if="orderhistory.control_items.order_id==constvalue['DISP_ONLY']">&nbsp;&nbsp;{{orderhistory.order_id}}</dd>
+        <dt v-if="orderhistory.control_items.order_regist_day==constvalue['DISP_ONLY']">■注文日&nbsp;</dt>
+        <dd v-if="orderhistory.control_items.order_regist_day==constvalue['DISP_ONLY']">&nbsp;&nbsp;{{orderhistory.order_regist_day}}</dd>
+        <dt v-if="orderhistory.control_items.product_info==constvalue['DISP_ONLY']">■ご注文商品（数量）&nbsp;</dt>
           <div
             v-for="product_info in orderhistory.product_infos"
-            v-bind:key="KEY">
+            v-bind:key="KEY"
+            v-if="orderhistory.control_items.product_info==constvalue['DISP_ONLY']">
             &nbsp;&nbsp;{{ product_info.product_name }}({{ product_info.order_qty }})
           </div>
-        <dt>■ご注文金額&nbsp;</dt>
-        <dd>&nbsp;&nbsp;{{orderhistory.order_amount}}</dd>
-        <dt>■ご注文の状態&nbsp;</dt>
-        <dd>&nbsp;&nbsp;{{orderhistory.shipment_detail_status}}</dd>
+        <dt v-if="orderhistory.control_items.order_amount==constvalue['DISP_ONLY']">■ご注文金額&nbsp;</dt>
+        <dd v-if="orderhistory.control_items.order_amount==constvalue['DISP_ONLY']">&nbsp;&nbsp;{{orderhistory.order_amount}}</dd>
+        <dt v-if="orderhistory.control_items.shipment_detail_status==constvalue['DISP_ONLY']">■ご注文の状態&nbsp;</dt>
+        <dd v-if="orderhistory.control_items.shipment_detail_status==constvalue['DISP_ONLY']">&nbsp;&nbsp;{{orderhistory.shipment_detail_status}}</dd>
       </div>
     </dl>
   </form>
