@@ -51,7 +51,7 @@
         <dd v-if="control_items.order_regist_day==constvalue['DISP_ONLY']">&nbsp;&nbsp;{{orderhistory.order_regist_day}}</dd>
         <dt v-if="control_items.product_infos==constvalue['DISP_ONLY']">■ご注文商品（数量）&nbsp;</dt>
           <div
-            v-for="product_info in orderhistories.product_infos"
+            v-for="product_info in orderhistory.product_infos"
             v-bind:key="KEY"
             v-if="control_items.product_infos==constvalue['DISP_ONLY']">
             &nbsp;&nbsp;{{ product_info.product_name }}({{ product_info.order_qty }})
