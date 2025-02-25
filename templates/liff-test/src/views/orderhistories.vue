@@ -8,6 +8,7 @@
 
   // 履歴データ取得
   let orderhistories = ref("");
+  let control_items = ref("");
 
   // データ取得処理呼び出し
   getData();
