@@ -28,7 +28,7 @@
       .then(function(result) {
         // データ処理が正常の場合
         orderhistories.value = result.data.data;
-        control_items = result.data.control_items;
+        control_items.value = result.data.control_items;
         //alert("in then");
         //alert(JSON.stringify(result));
         // エラーの場合
